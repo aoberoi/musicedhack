@@ -1,0 +1,27 @@
+doctype 5
+include includes/html
+  head
+
+    include includes/meta
+    //- TODO: set a default title
+    title= title
+
+    //- Custom styles
+    //- TODO: grunt task to minify and concat these, then replace this with some *.min.css
+    block styles
+
+    //- TODO: DEPLOYTIME: swap this out for a production version in prod env
+    script(src='http://modernizr.com/downloads/modernizr-latest.js')
+
+  body
+
+    include includes/chromeframe-prompt
+
+    block content
+
+    //- Custom scripts
+    //- TODO: grunt task to minify and concat these, then replace this with some *.min.js
+    block scripts
+      script(data-main='/js/main', src='/js/libs/require/require.js')
+
+    include includes/google-analytics
